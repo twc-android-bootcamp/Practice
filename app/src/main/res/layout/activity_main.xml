@@ -1,44 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_1"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_1"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/gray"
+        android:layout_marginStart="@dimen/margin_48"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/android_practice" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/margin_64"
-        android:layout_marginStart="@dimen/margin_48"
-        android:layout_marginEnd="@dimen/margin_48"
-        />
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
-    <Button
-        android:id="@+id/button_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_2"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/gray"
-        android:layout_marginTop="@dimen/margin_24"
-        android:layout_marginStart="@dimen/margin_48"
-        android:layout_marginEnd="@dimen/margin_48"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_48"
+            android:layout_marginEnd="@dimen/margin_48"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_3"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/gray"
-        android:layout_marginTop="@dimen/margin_24"
-        android:layout_marginStart="@dimen/margin_48"
-        android:layout_marginEnd="@dimen/margin_48"
-        />
-</LinearLayout>
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_1"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_2"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_3"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_4"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_5"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_6"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_7"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_8"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_9"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:backgroundTint="@color/gray"
+                android:text="@string/button_10"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
