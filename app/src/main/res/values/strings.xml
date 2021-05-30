@@ -11,4 +11,9 @@
     <string name="button_9">button 9</string>
     <string name="button_10">button 10</string>
     <string name="android_practice">Android practice</string>
+    <string name="constraint_layout">constraint_layout</string>
+    <string name="hello">Hello!</string>
+    <string name="github">github</string>
+    <string name="sign_up">Signup</string>
+    <string name="login">Login</string>
 </resources>
