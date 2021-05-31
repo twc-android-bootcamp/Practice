@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConstraintActivity" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>

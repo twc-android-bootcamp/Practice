@@ -16,7 +16,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUI() {
-        Button btn1 = findViewById(R.id.button_1);
+        Button btn1 = findViewById(R.id.constraint_layout);
         btn1.setOnClickListener(v -> startActivity(new Intent(this, ConstraintActivity.class)));
+
+        Button btn2 = findViewById(R.id.login);
+        btn2.setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
     }
 }

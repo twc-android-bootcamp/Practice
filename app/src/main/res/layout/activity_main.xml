@@ -8,47 +8,47 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_48"
-        android:layout_marginTop="@dimen/margin_32"
+        android:layout_marginStart="@dimen/dimen_48"
+        android:layout_marginTop="@dimen/dimen_32"
         android:text="@string/android_practice" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_64"
+        android:layout_marginTop="@dimen/dimen_64"
         android:overScrollMode="never"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_48"
-            android:layout_marginEnd="@dimen/margin_48"
+            android:layout_marginStart="@dimen/dimen_48"
+            android:layout_marginEnd="@dimen/dimen_48"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_1"
+                android:id="@+id/constraint_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/constraint_layout"
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_2"
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
-                android:text="@string/button_2"
+                android:text="@string/login"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/button_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_3"
                 android:textAllCaps="false" />
@@ -57,7 +57,7 @@
                 android:id="@+id/button_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_4"
                 android:textAllCaps="false" />
@@ -66,7 +66,7 @@
                 android:id="@+id/button_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_5"
                 android:textAllCaps="false" />
@@ -75,7 +75,7 @@
                 android:id="@+id/button_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_6"
                 android:textAllCaps="false" />
@@ -84,7 +84,7 @@
                 android:id="@+id/button_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_7"
                 android:textAllCaps="false" />
@@ -93,7 +93,7 @@
                 android:id="@+id/button_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_8"
                 android:textAllCaps="false" />
@@ -102,7 +102,7 @@
                 android:id="@+id/button_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_9"
                 android:textAllCaps="false" />
@@ -111,7 +111,7 @@
                 android:id="@+id/button_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
                 android:text="@string/button_10"
                 android:textAllCaps="false" />
