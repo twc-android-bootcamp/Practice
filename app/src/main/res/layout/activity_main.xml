@@ -45,12 +45,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_3"
+                android:id="@+id/pick_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
-                android:text="@string/button_3"
+                android:text="@string/pick_contact"
                 android:textAllCaps="false" />
 
             <Button
