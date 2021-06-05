@@ -1,9 +1,11 @@
-package com.thoughtworks.androidtrain;
+package com.thoughtworks.androidtrain.ui;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.thoughtworks.androidtrain.R;
 
 public class ConstraintActivity extends AppCompatActivity {
 

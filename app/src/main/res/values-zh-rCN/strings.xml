@@ -23,4 +23,7 @@
     <string name="or_connect_with">或通过以下方式连接</string>
     <string name="sign_up_with_email">使用电子邮件注册</string>
     <string name="pick_contact">选择联系人</string>
+    <string name="fragment">片段</string>
+    <string name="android">Android</string>
+    <string name="java">Java</string>
 </resources>

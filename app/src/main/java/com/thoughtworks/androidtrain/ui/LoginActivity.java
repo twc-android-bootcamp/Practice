@@ -1,4 +1,4 @@
-package com.thoughtworks.androidtrain;
+package com.thoughtworks.androidtrain.ui;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.thoughtworks.androidtrain.R;
 
 public class LoginActivity extends AppCompatActivity {
     @Override

@@ -54,12 +54,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_4"
+                android:id="@+id/fragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
-                android:text="@string/button_4"
+                android:text="@string/fragment"
                 android:textAllCaps="false" />
 
             <Button

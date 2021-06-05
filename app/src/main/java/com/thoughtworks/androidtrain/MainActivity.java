@@ -6,11 +6,16 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.thoughtworks.androidtrain.ui.ConstraintActivity;
+import com.thoughtworks.androidtrain.ui.LoginActivity;
+import com.thoughtworks.androidtrain.ui.fragment.MyFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivityForResult(intent, REQUEST_SELECT_PHONE_NUMBER);
             }
+        });
+
+        Button btnFragment = findViewById(R.id.fragment);
+        btnFragment.setOnClickListener(v -> {
+            startActivity(new Intent(this, MyFragmentActivity.class));
         });
     }
 
