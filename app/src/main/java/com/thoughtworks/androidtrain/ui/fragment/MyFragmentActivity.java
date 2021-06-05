@@ -36,4 +36,9 @@ public class MyFragmentActivity extends AppCompatActivity {
                 R.id.content,
                 null);
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }
