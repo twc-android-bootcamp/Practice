@@ -1,7 +1,6 @@
 package com.thoughtworks.androidtrain.uiflow.recyclerview;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,6 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHol
 
         holder.tvName.setText(tweet.getSender().getNick());
         holder.tvContent.setText(tweet.getContent());
-        holder.relayout();
     }
 
     @Override
@@ -76,12 +74,6 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHol
             imAvatar = itemView.findViewById(R.id.avatar);
             tvName = itemView.findViewById(R.id.name);
             tvContent = itemView.findViewById(R.id.content);
-        }
-
-        public void relayout() {
-            Log.i(TAG, "height = " + itemView.getHeight());
-//            ViewGroup.LayoutParams layoutParams = itemView.getLayoutParams();
-//            layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
         }
     }
 }
