@@ -26,4 +26,5 @@
     <string name="fragment">片段</string>
     <string name="android">Android</string>
     <string name="java">Java</string>
+    <string name="to_the_bottom">到底了</string>
 </resources>

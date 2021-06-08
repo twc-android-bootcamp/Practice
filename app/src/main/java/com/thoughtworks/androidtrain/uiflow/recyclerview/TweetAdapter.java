@@ -18,9 +18,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHolder> {
+public class TweetAdapter extends RecyclerView.Adapter {
 
     private static final String TAG = "TweetAdapter";
+
+    private static final int VIEW_TYPE_TWEET = 0;
+    private static final int VIEW_TYPE_BOTTOM = 1;
 
     private final Context context;
 
@@ -39,29 +42,46 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHol
     @NonNull
     @NotNull
     @Override
-    public TweetViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        return new TweetViewHolder(inflater.inflate(R.layout.item_tweet, parent, false));
+        if (viewType == VIEW_TYPE_TWEET) {
+            return new TweetViewHolder(inflater.inflate(R.layout.item_tweet, parent, false));
+        } else {
+            return new BottomViewHolder(inflater.inflate(R.layout.item_bottom, parent, false));
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull TweetAdapter.TweetViewHolder holder, int position) {
-        Tweet tweet = tweets.get(position);
+    public void onBindViewHolder(@NonNull @NotNull RecyclerView.ViewHolder holder, int position) {
+        int itemViewType = getItemViewType(position);
+        if (itemViewType == VIEW_TYPE_TWEET) {
+            Tweet tweet = tweets.get(position);
+            TweetViewHolder tweetViewHolder = (TweetViewHolder) holder;
 
-        holder.tvName.setText("");
-        holder.tvContent.setText("");
+            tweetViewHolder.tvName.setText("");
+            tweetViewHolder.tvContent.setText("");
 
-        if (tweet.getSender() == null) {
-            return;
+            if (tweet.getSender() == null) {
+                return;
+            }
+
+            tweetViewHolder.tvName.setText(tweet.getSender().getNick());
+            tweetViewHolder.tvContent.setText(tweet.getContent());
         }
-
-        holder.tvName.setText(tweet.getSender().getNick());
-        holder.tvContent.setText(tweet.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return this.tweets.size();
+        return this.tweets.size() + 1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position < tweets.size()) {
+            return VIEW_TYPE_TWEET;
+        }
+
+        return VIEW_TYPE_BOTTOM;
     }
 
     public static class TweetViewHolder extends RecyclerView.ViewHolder {
@@ -74,6 +94,12 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.TweetViewHol
             imAvatar = itemView.findViewById(R.id.avatar);
             tvName = itemView.findViewById(R.id.name);
             tvContent = itemView.findViewById(R.id.content);
+        }
+    }
+
+    public static class BottomViewHolder extends RecyclerView.ViewHolder {
+        public BottomViewHolder(@NonNull @NotNull View itemView) {
+            super(itemView);
         }
     }
 }
