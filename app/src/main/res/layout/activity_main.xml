@@ -63,12 +63,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_5"
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
-                android:text="@string/button_5"
+                android:text="@string/recycler_view"
                 android:textAllCaps="false" />
 
             <Button

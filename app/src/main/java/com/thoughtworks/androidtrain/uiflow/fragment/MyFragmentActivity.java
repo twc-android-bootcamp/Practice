@@ -1,4 +1,4 @@
-package com.thoughtworks.androidtrain.ui.fragment;
+package com.thoughtworks.androidtrain.uiflow.fragment;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -35,5 +35,10 @@ public class MyFragmentActivity extends AppCompatActivity {
                 new ContentAndroidFragment(),
                 R.id.content,
                 null);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

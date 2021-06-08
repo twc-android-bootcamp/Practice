@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ConstraintActivity" />
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.fragment.MyFragmentActivity" />
+        <activity android:name=".uiflow.ConstraintActivity" />
+        <activity android:name=".uiflow.LoginActivity" />
+        <activity android:name=".uiflow.fragment.MyFragmentActivity" />
+        <activity android:name=".uiflow.recyclerview.RecyclerViewActivity" />
     </application>
 
 </manifest>

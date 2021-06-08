@@ -1,4 +1,4 @@
-package com.thoughtworks.androidtrain.ui;
+package com.thoughtworks.androidtrain.uiflow;
 
 import android.os.Bundle;
 

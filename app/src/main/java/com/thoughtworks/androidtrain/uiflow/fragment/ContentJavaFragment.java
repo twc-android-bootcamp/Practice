@@ -1,4 +1,4 @@
-package com.thoughtworks.androidtrain.ui.fragment;
+package com.thoughtworks.androidtrain.uiflow.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import com.thoughtworks.androidtrain.R;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ContentAndroidFragment extends Fragment {
+public class ContentJavaFragment extends Fragment {
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -21,6 +21,6 @@ public class ContentAndroidFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater,
                              @Nullable @org.jetbrains.annotations.Nullable ViewGroup container,
                              @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_layout_android, container, false);
+        return inflater.inflate(R.layout.fragment_layout_java, container, false);
     }
 }

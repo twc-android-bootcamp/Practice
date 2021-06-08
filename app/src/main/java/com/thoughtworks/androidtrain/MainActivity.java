@@ -6,16 +6,16 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.thoughtworks.androidtrain.ui.ConstraintActivity;
-import com.thoughtworks.androidtrain.ui.LoginActivity;
-import com.thoughtworks.androidtrain.ui.fragment.MyFragmentActivity;
+import com.thoughtworks.androidtrain.uiflow.ConstraintActivity;
+import com.thoughtworks.androidtrain.uiflow.LoginActivity;
+import com.thoughtworks.androidtrain.uiflow.recyclerview.RecyclerViewActivity;
+import com.thoughtworks.androidtrain.uiflow.fragment.MyFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button btnFragment = findViewById(R.id.fragment);
-        btnFragment.setOnClickListener(v -> {
-            startActivity(new Intent(this, MyFragmentActivity.class));
-        });
+        btnFragment.setOnClickListener(v -> startActivity(new Intent(this, MyFragmentActivity.class)));
+
+        Button btnRecyclerView = findViewById(R.id.recycler_view);
+        btnRecyclerView.setOnClickListener(v -> startActivity(new Intent(this, RecyclerViewActivity.class)));
     }
 
     @Override
