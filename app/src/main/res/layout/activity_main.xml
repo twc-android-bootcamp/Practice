@@ -72,12 +72,12 @@
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button_6"
+                android:id="@+id/thread"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_24"
                 android:backgroundTint="@color/gray"
-                android:text="@string/button_6"
+                android:text="@string/thread"
                 android:textAllCaps="false" />
 
             <Button

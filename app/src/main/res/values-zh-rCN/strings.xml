@@ -27,4 +27,5 @@
     <string name="android">Android</string>
     <string name="java">Java</string>
     <string name="to_the_bottom">到底了</string>
+    <string name="thread">线程</string>
 </resources>

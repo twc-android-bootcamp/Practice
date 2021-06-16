@@ -16,6 +16,7 @@ import com.thoughtworks.androidtrain.uiflow.ConstraintActivity;
 import com.thoughtworks.androidtrain.uiflow.LoginActivity;
 import com.thoughtworks.androidtrain.uiflow.recyclerview.RecyclerViewActivity;
 import com.thoughtworks.androidtrain.uiflow.fragment.MyFragmentActivity;
+import com.thoughtworks.androidtrain.uiflow.thread.ThreadActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnRecyclerView = findViewById(R.id.recycler_view);
         btnRecyclerView.setOnClickListener(v -> startActivity(new Intent(this, RecyclerViewActivity.class)));
+
+        Button btnThread = findViewById(R.id.thread);
+        btnThread.setOnClickListener(v -> startActivity(new Intent(this, ThreadActivity.class)));
     }
 
     @Override

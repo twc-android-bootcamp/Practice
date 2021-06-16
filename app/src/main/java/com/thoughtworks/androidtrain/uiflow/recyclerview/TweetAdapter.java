@@ -8,8 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.thoughtworks.androidtrain.R;
 import com.thoughtworks.androidtrain.data.model.Tweet;
 
@@ -60,6 +62,7 @@ public class TweetAdapter extends RecyclerView.Adapter {
 
             tweetViewHolder.tvName.setText("");
             tweetViewHolder.tvContent.setText("");
+            tweetViewHolder.imAvatar.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.avatar));
 
             if (tweet.getSender() == null) {
                 return;
@@ -67,6 +70,13 @@ public class TweetAdapter extends RecyclerView.Adapter {
 
             tweetViewHolder.tvName.setText(tweet.getSender().getNick());
             tweetViewHolder.tvContent.setText(tweet.getContent());
+
+            Glide
+                    .with(context)
+                    .load(tweet.getSender().getAvatar())
+                    .centerCrop()
+                    .placeholder(R.drawable.avatar)
+                    .into(tweetViewHolder.imAvatar);
         }
     }
 
