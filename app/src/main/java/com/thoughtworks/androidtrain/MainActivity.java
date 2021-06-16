@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.thoughtworks.androidtrain.uiflow.ConstraintActivity;
+import com.thoughtworks.androidtrain.uiflow.HandlerActivity;
 import com.thoughtworks.androidtrain.uiflow.LoginActivity;
 import com.thoughtworks.androidtrain.uiflow.recyclerview.RecyclerViewActivity;
 import com.thoughtworks.androidtrain.uiflow.fragment.MyFragmentActivity;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnThread = findViewById(R.id.thread);
         btnThread.setOnClickListener(v -> startActivity(new Intent(this, ThreadActivity.class)));
+
+        Button btnHandler = findViewById(R.id.handler);
+        btnHandler.setOnClickListener(v -> startActivity(new Intent(this, HandlerActivity.class)));
     }
 
     @Override

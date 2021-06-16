@@ -31,4 +31,7 @@
     <string name="to_the_bottom">to the bottom</string>
     <string name="thread">thread</string>
     <string name="zero">0</string>
+    <string name="handler">handler</string>
+    <string name="msg1">msg1</string>
+    <string name="msg2">msg2</string>
 </resources>
