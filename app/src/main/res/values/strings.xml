@@ -34,4 +34,5 @@
     <string name="handler">handler</string>
     <string name="msg1">msg1</string>
     <string name="msg2">msg2</string>
+    <string name="rxjava">rxjava</string>
 </resources>

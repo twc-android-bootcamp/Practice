@@ -25,6 +25,7 @@
         <activity android:name=".uiflow.recyclerview.RecyclerViewActivity" />
         <activity android:name=".uiflow.thread.ThreadActivity" />
         <activity android:name=".uiflow.HandlerActivity" />
+        <activity android:name=".uiflow.RxJavaActivity" />
     </application>
 
 </manifest>
