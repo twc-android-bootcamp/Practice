@@ -16,6 +16,7 @@ import com.thoughtworks.androidtrain.uiflow.ConstraintActivity;
 import com.thoughtworks.androidtrain.uiflow.HandlerActivity;
 import com.thoughtworks.androidtrain.uiflow.LoginActivity;
 import com.thoughtworks.androidtrain.uiflow.RxJavaActivity;
+import com.thoughtworks.androidtrain.uiflow.SpActivity;
 import com.thoughtworks.androidtrain.uiflow.recyclerview.RecyclerViewActivity;
 import com.thoughtworks.androidtrain.uiflow.fragment.MyFragmentActivity;
 import com.thoughtworks.androidtrain.uiflow.thread.ThreadActivity;
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnRxJava = findViewById(R.id.rxjava);
         btnRxJava.setOnClickListener(v -> startActivity(new Intent(this, RxJavaActivity.class)));
+
+        Button btnSp = findViewById(R.id.sp);
+        btnSp.setOnClickListener(v -> startActivity(new Intent(this, SpActivity.class)));
     }
 
     @Override

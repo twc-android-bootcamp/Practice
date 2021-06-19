@@ -35,4 +35,8 @@
     <string name="msg1">msg1</string>
     <string name="msg2">msg2</string>
     <string name="rxjava">rxjava</string>
+    <string name="got_it">got it</string>
+    <string name="sp_tips">tips:\nclick \"got it\" to hide the tip</string>
+    <string name="sp">sp</string>
+    <string name="welcome_back">Welcome back</string>
 </resources>

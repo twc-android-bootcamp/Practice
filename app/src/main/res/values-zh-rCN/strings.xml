@@ -28,4 +28,7 @@
     <string name="java">Java</string>
     <string name="to_the_bottom">到底了</string>
     <string name="thread">线程</string>
+    <string name="got_it">知道了</string>
+    <string name="sp_tips">提示信息:\n点击\"知道了\"不再提示</string>
+    <string name="welcome_back">欢迎您回来</string>
 </resources>

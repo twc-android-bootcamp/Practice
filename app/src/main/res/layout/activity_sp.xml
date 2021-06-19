@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_16">
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_got_it"
+        android:text="@string/got_it"
+        android:textColor="@color/black"
+        android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</FrameLayout>

@@ -1,6 +1,8 @@
 package com.thoughtworks.androidtrain.definitions;
 
 public class Constants {
+    public static final String SHARED_PREFERENCE_FILE = "preference";
+
     public static final String TWEETS = "[\n" +
             "  {\n" +
             "    \"content\": \"沙发！\",\n" +
