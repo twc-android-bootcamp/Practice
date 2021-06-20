@@ -20,12 +20,8 @@ import com.thoughtworks.androidtrain.definitions.Constants;
 import com.thoughtworks.androidtrain.utils.FileUtils;
 import com.thoughtworks.androidtrain.utils.SharedPreferenceUtils;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import io.reactivex.rxjava3.core.Flowable;
@@ -80,12 +76,9 @@ public class LocalStorageImpl implements LocalStorage {
                 appDatabase.clearAllTables();
 
                 appDatabase.runInTransaction(() -> {
-                    Map<String, Long> senderIdMap = extractSenderIdMap(tweets);
-
                     tweets.forEach(tweet -> {
                         TweetEntity tweetEntity = toRoomTweet(tweet);
-                        Long tweetSenderId = senderIdMap.get(tweet.getSender().getUsername());
-                        tweetEntity.senderId = tweetSenderId;
+                        tweetEntity.senderId = insertRoomSender(tweet.getSender());
                         long tweetId = appDatabase.tweetDao().insert(tweetEntity).blockingGet();
 
                         if (tweet.getImages() != null) {
@@ -97,8 +90,7 @@ public class LocalStorageImpl implements LocalStorage {
 
                         if (tweet.getComments() != null) {
                             tweet.getComments().forEach(comment -> {
-                                Long senderId = senderIdMap.get(comment.getSender().getUsername());
-                                CommentEntity commentEntity = toRoomComment(comment, tweetId, senderId);
+                                CommentEntity commentEntity = toRoomComment(comment, tweetId, insertRoomSender(comment.getSender()));
                                 appDatabase.commentDao().insert(commentEntity).blockingGet();
                             });
                         }
@@ -111,32 +103,6 @@ public class LocalStorageImpl implements LocalStorage {
 
             emitter.onSuccess(true);
         });
-    }
-
-    @NotNull
-    private Map<String, Long> extractSenderIdMap(List<Tweet> tweets) {
-        Map<String, Sender> senderMap = new HashMap<>();
-        Map<String, Long> senderIdMap = new HashMap<>();
-
-        for (Tweet tweet : tweets) {
-            Sender sender = tweet.getSender();
-            senderMap.put(sender.getUsername(), sender);
-
-            if (tweet.getComments() != null) {
-                for (Comment comment : tweet.getComments()) {
-                    Sender commentSender = comment.getSender();
-                    senderMap.put(commentSender.getUsername(), commentSender);
-                }
-            }
-        }
-
-        for (Map.Entry<String, Sender> entry : senderMap.entrySet()) {
-            SenderEntity senderEntity = toRoomSender(entry.getValue());
-            Long senderId = appDatabase.senderDao().insert(senderEntity).blockingGet();
-            senderIdMap.put(entry.getKey(), senderId);
-        }
-
-        return senderIdMap;
     }
 
     @Override
@@ -182,6 +148,11 @@ public class LocalStorageImpl implements LocalStorage {
         tweetEntity.content = tweet.getContent();
 
         return tweetEntity;
+    }
+
+    private long insertRoomSender(Sender sender) {
+        SenderEntity senderEntity = toRoomSender(sender);
+        return appDatabase.senderDao().insert(senderEntity).blockingGet();
     }
 
     private SenderEntity toRoomSender(Sender sender) {
