@@ -22,6 +22,7 @@ import com.thoughtworks.androidtrain.utils.SharedPreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import io.reactivex.rxjava3.core.Flowable;
@@ -56,17 +57,7 @@ public class LocalStorageImpl implements LocalStorage {
         List<Tweet> tweets = gson.fromJson(FileUtils.getStringFromRaw(context, R.raw.tweets), new TypeToken<List<Tweet>>() {
         }.getType());
 
-        List<Tweet> filteredTweets = new ArrayList<>();
-        for (Tweet tweet : tweets
-        ) {
-            if (tweet.getError() != null || tweet.getUnknownError() != null) {
-                continue;
-            }
-
-            filteredTweets.add(tweet);
-        }
-
-        return filteredTweets;
+        return tweets.stream().filter(tweet -> tweet.getError() == null && tweet.getUnknownError() == null).collect(Collectors.toList());
     }
 
     @Override
