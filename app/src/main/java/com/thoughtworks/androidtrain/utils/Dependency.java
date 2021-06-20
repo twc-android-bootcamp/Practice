@@ -3,16 +3,16 @@ package com.thoughtworks.androidtrain.utils;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import com.thoughtworks.androidtrain.data.source.LocalStorage;
-import com.thoughtworks.androidtrain.data.source.LocalStorageImpl;
+import com.thoughtworks.androidtrain.data.source.DataSource;
+import com.thoughtworks.androidtrain.data.source.Repository;
 
 public final class Dependency {
     @SuppressLint("StaticFieldLeak")
     private static volatile Dependency instance = null;
 
-    private Context context;
+    private final Context context;
 
-    private final LocalStorage localStorage;
+    private final DataSource dataSource;
 
     public static Dependency getInstance(Context context) {
         if (instance == null) {
@@ -27,10 +27,10 @@ public final class Dependency {
 
     private Dependency(Context context) {
         this.context = context;
-        localStorage = new LocalStorageImpl(context);
+        this.dataSource = new Repository(context);
     }
 
-    public LocalStorage getLocalStorage() {
-        return localStorage;
+    public DataSource getDataSource() {
+        return dataSource;
     }
 }

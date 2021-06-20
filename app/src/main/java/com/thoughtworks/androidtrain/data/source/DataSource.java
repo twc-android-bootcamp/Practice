@@ -4,10 +4,12 @@ import com.thoughtworks.androidtrain.data.model.Tweet;
 
 import java.util.List;
 
-public interface LocalStorage {
+import io.reactivex.rxjava3.core.Flowable;
+
+public interface DataSource {
     boolean isKnown();
 
     void setKnown(boolean isKnown);
 
-    List<Tweet> getTweets();
+    Flowable<List<Tweet>> fetchTweets();
 }

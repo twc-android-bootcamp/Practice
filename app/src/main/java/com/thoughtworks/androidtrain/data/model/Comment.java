@@ -4,6 +4,9 @@ public class Comment {
     private String content;
     private Sender sender;
 
+    public Comment() {
+    }
+
     public Comment(String content, Sender sender) {
         this.content = content;
         this.sender = sender;

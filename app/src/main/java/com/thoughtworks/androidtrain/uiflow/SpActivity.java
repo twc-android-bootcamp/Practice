@@ -34,7 +34,7 @@ public class SpActivity extends AppCompatActivity {
         btnGotIt = findViewById(R.id.btn_got_it);
 
         btnGotIt.setOnClickListener(v -> {
-            dependency.getLocalStorage().setKnown(true);
+            dependency.getDataSource().setKnown(true);
             refreshStatus();
         });
 
@@ -42,7 +42,7 @@ public class SpActivity extends AppCompatActivity {
     }
 
     private void refreshStatus() {
-        tvInfo.setText(dependency.getLocalStorage().isKnown() ? R.string.welcome_back : R.string.sp_tips);
-        btnGotIt.setVisibility(dependency.getLocalStorage().isKnown() ? View.GONE : View.VISIBLE);
+        tvInfo.setText(dependency.getDataSource().isKnown() ? R.string.welcome_back : R.string.sp_tips);
+        btnGotIt.setVisibility(dependency.getDataSource().isKnown() ? View.GONE : View.VISIBLE);
     }
 }
