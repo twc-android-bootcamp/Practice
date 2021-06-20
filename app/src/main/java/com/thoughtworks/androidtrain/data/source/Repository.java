@@ -7,12 +7,12 @@ import com.thoughtworks.androidtrain.data.source.local.LocalStorage;
 import com.thoughtworks.androidtrain.data.source.local.LocalStorageImpl;
 import com.thoughtworks.androidtrain.data.source.remote.RemoteDataSource;
 import com.thoughtworks.androidtrain.data.source.remote.RemoteDataSourceImpl;
+import com.thoughtworks.androidtrain.utils.schedulers.SchedulerProvider;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Repository implements DataSource {
 
@@ -20,9 +20,12 @@ public class Repository implements DataSource {
 
     private final RemoteDataSource remoteDataSource;
 
-    public Repository(Context context) {
-        localStorage = new LocalStorageImpl(context);
-        remoteDataSource = new RemoteDataSourceImpl();
+    private final SchedulerProvider schedulerProvider;
+
+    public Repository(Context context, SchedulerProvider schedulerProvider) {
+        this.schedulerProvider = schedulerProvider;
+        this.localStorage = new LocalStorageImpl(context);
+        this.remoteDataSource = new RemoteDataSourceImpl();
     }
 
     @Override
@@ -38,10 +41,10 @@ public class Repository implements DataSource {
     @Override
     public Flowable<List<Tweet>> fetchTweets() {
         remoteDataSource.fetchTweets()
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(schedulerProvider.io())
                 .subscribe(tweets -> {
                     List<Tweet> filteredTweets = tweets.stream().filter(tweet -> tweet.getError() == null && tweet.getUnknownError() == null).collect(Collectors.toList());
-                    localStorage.updateTweets(filteredTweets).subscribeOn(Schedulers.io()).subscribe();
+                    localStorage.updateTweets(filteredTweets).subscribeOn(schedulerProvider.io()).subscribe();
                 }, throwable -> {
                 });
 

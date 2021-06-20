@@ -33,7 +33,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     private void initViewModel() {
         TweetsViewModel tweetsViewModel = new ViewModelProvider(this).get(TweetsViewModel.class);
-        tweetsViewModel.setDependencies(dependency.getDataSource());
+        tweetsViewModel.setDependencies(dependency.getDataSource(), dependency.getSchedulerProvider());
         tweetsViewModel.tweetList.observe(this, tweets -> tweetAdapter.setData(tweets));
 
         tweetsViewModel.fetchTweets(throwable -> Toast.makeText(RecyclerViewActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show());

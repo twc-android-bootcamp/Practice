@@ -5,12 +5,16 @@ import android.content.Context;
 
 import com.thoughtworks.androidtrain.data.source.DataSource;
 import com.thoughtworks.androidtrain.data.source.Repository;
+import com.thoughtworks.androidtrain.utils.schedulers.AndroidSchedulerProvider;
+import com.thoughtworks.androidtrain.utils.schedulers.SchedulerProvider;
 
 public final class Dependency {
     @SuppressLint("StaticFieldLeak")
     private static volatile Dependency instance = null;
 
     private final Context context;
+
+    private final SchedulerProvider schedulerProvider;
 
     private final DataSource dataSource;
 
@@ -27,10 +31,15 @@ public final class Dependency {
 
     private Dependency(Context context) {
         this.context = context;
-        this.dataSource = new Repository(context);
+        this.schedulerProvider = new AndroidSchedulerProvider();
+        this.dataSource = new Repository(context, schedulerProvider);
     }
 
     public DataSource getDataSource() {
         return dataSource;
+    }
+
+    public SchedulerProvider getSchedulerProvider() {
+        return schedulerProvider;
     }
 }
