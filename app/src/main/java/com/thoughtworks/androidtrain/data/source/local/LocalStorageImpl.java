@@ -22,7 +22,6 @@ import com.thoughtworks.androidtrain.utils.SharedPreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import io.reactivex.rxjava3.core.Flowable;
