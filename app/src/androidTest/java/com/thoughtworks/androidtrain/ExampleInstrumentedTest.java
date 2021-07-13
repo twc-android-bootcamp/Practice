@@ -28,7 +28,7 @@ public class ExampleInstrumentedTest {
     public ActivityTestRule activityTestRule = new ActivityTestRule(MainActivity.class);
 
     @Test
-    public void useAppContext() {
+    public void test_login_page() {
         onView(withId(R.id.login)).perform(click());
         onView(withId(R.id.logo)).check(matches(isDisplayed()));
         onView(withId(R.id.cb_remember_me)).perform(click()).check(matches(isChecked()));
